@@ -1,24 +1,34 @@
 import React, {Component} from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
-import testComponent from './testComponent.js';
-import '../css/crimeButton.css';
+import {Route, Link} from 'react-router-dom';
+import '../css/Buttons.css';
 
 class CrimeButton extends Component {
   constructor(props) {
     super(props);
 
+    const object = this.props.obj;
+    let locations = Object.keys(object);
+    locations.splice(7,1);
     this.state = {
-      object: this.props.obj
+      object: object,
+      locations: locations
     }
   }
 
   render() {
     return (
       <div>
-        <button className='crimeButton' onClick={function(e) {
-        }.bind(this)}>
-          {this.state.object.범죄분류}
-        </button>
+        <Link to={{
+          pathname: 'TestComponent',
+          state: {
+            object: this.state.object,
+            locations: this.state.locations
+          }
+        }}>
+          <button className='CrimeBtn'>
+            {this.state.object.범죄분류}
+          </button>
+        </Link>
       </div>
     ); 
   }

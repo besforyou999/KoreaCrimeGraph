@@ -1,41 +1,9 @@
 import axios from "axios";
 import React, {Component} from "react";
+import CrimeList from "./components/CrimeList.js";
 import "./App.css";
 
-
-class CrimeList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {objs : this.props.obj};
-  }
-
-  render() {
-    const objects = this.state.objs;
-    return (
-      <div>
-        {objects.map(crime => (
-            <Crime
-              crimeName={crime.범죄분류}
-            />
-        ))}
-      </div>
-    );
-  }
-}
-
-class Crime extends Component {
-  render() {
-    return (
-      <div>
-        hello world
-        {this.props.crimeName}
-      </div>
-    );
-  }
-}
-
 class App extends Component { 
-  
   state = {
     isLoading: true,
     data: [],
@@ -44,6 +12,9 @@ class App extends Component {
   getData = async () => {
     const data = await axios.get("https://api.odcloud.kr/api/15085727/v1/uddi:d57791f7-1e1e-46c9-bbfd-911fa64ee8a4?page=0&perPage=162&serviceKey=W%2BgUq1akbVmoWv4%2BIoQyj28WxZMlpH5VraaxOqwv2o8QAEkLDvUO8hNp8vihviaBmmW6Zoq30f2Ux%2BABGwuXsg%3D%3D");
     this.setState({data: data.data.data , isLoading: false});
+    window.localStorage.setItem('totalData', JSON.stringify(data));
+    let obj_keys = Object.keys(data.data.data[0]);
+    window.localStorage.setItem('dataKeys', JSON.stringify(obj_keys));
   }
 
   componentDidMount() {
@@ -67,7 +38,6 @@ class App extends Component {
     );
   }
 }
-
 
 
 export default App;

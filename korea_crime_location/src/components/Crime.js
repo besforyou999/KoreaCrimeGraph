@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import CrimeButton from "./CrimeButton.js";
 import '../css/vowelDiv.css';
+import '../css/vowelContainer.css';
 
 class Crime extends Component {
   constructor(props) {
@@ -31,14 +32,16 @@ class Crime extends Component {
   render() {
     let idx = 0;
     return(
-      <div className="vowelDiv">
+      <div className="vowelContainer">
         <h2>{this.state.constantVowel}</h2>
-        {this.state.crime_array.map(crime=> (
-          <CrimeButton 
-            obj={crime}
-            key={idx++} >
-          </CrimeButton>
-        ))}
+        <div className="vowelDiv">
+          {this.state.crime_array.map(crime=> (
+            <CrimeButton 
+              obj={crime}
+              key={idx++} >
+            </CrimeButton>
+          ))}
+        </div>
       </div>
     )
   }

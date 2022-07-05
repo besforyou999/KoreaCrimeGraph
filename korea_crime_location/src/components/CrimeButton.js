@@ -19,7 +19,7 @@ class CrimeButton extends Component {
     return (
       <div>
         <Link to={{
-          pathname: 'TestComponent',
+          pathname: 'CrimeSpec',
           state: {
             object: this.state.object,
             locations: this.state.locations

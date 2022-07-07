@@ -6,10 +6,10 @@ import '../css/CrimeClass.css';
 
 export default function CrimeSpec() {
   const location = useLocation();
+  console.log(location);
   const object = location.state.object;
   const locations = location.state.locations;
   const crime_class = object.범죄분류;
-  let idx = 0;
   return (
     <div>
       <div>

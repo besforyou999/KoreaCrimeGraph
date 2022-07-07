@@ -1,33 +1,56 @@
-import axios from "axios";
 import React, {Component} from "react";
 import CrimeList from "./CrimeList.js";
 import "../css/App.css";
-import csvFile from '../resource/crime_location.csv';
-import { readString } from 'react-papaparse';
+import csvFile from '../resource/crime_loc.csv';
+import Papa from 'papaparse';
 
-const papaConfig = {
-  complete: (results, file) => {
-    console.log('Parsing complete:', results, file);
-  },
+let csv_data = null;
+Papa.parse(csvFile, {
   download: true,
-  error: (error, file) => {
-    console.log('Error while parsing:', error, file);
-  },
-};
+  complete: function(input) {
+    csv_data = input;
+  }
+});
 
 class App extends Component { 
   state = {
     isLoading: true,
-    data: [],
+    data: null,
   };
 
-  getData = async () => {
-    const data = await axios.get("https://api.odcloud.kr/api/15085727/v1/uddi:d57791f7-1e1e-46c9-bbfd-911fa64ee8a4?page=0&perPage=162&serviceKey=W%2BgUq1akbVmoWv4%2BIoQyj28WxZMlpH5VraaxOqwv2o8QAEkLDvUO8hNp8vihviaBmmW6Zoq30f2Ux%2BABGwuXsg%3D%3D");
-    this.setState({data: data.data.data , isLoading: false});
-    window.localStorage.setItem('totalData', JSON.stringify(data));
-    let obj_keys = Object.keys(data.data.data[0]);
-    window.localStorage.setItem('dataKeys', JSON.stringify(obj_keys));
-    readString(csvFile, papaConfig);
+  create_crime_obj(array) {
+    return {
+      범죄분류: array[0],
+      서울: Number(array[1]),
+      부산: Number(array[2]),
+      대구: Number(array[3]),
+      인천: Number(array[4]),
+      광주: Number(array[5]),
+      대전: Number(array[6]),
+      울산: Number(array[7]),
+      세종: Number(array[8]),
+      경기: Number(array[9]),
+      강원: Number(array[10]),
+      충북: Number(array[11]),
+      충남: Number(array[12]),
+      전북: Number(array[13]),
+      전남: Number(array[14]),
+      경북: Number(array[15]),
+      경남: Number(array[16]),
+      제주: Number(array[17]),
+    }
+  }
+
+  getData () {
+    const data2 = this.buildData();
+    this.setState({data: data2 , isLoading: false});
+  }
+
+  buildData () {
+    let data_array = [];
+    for (let i = 1 ; i <= 162 ; i++) 
+      data_array.push(this.create_crime_obj(csv_data.data[i]));
+    return data_array;
   }
 
   componentDidMount() {
@@ -51,7 +74,6 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
 

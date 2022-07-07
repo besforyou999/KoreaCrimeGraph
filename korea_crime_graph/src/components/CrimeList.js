@@ -36,7 +36,6 @@ class CrimeList extends Component {
       }
     }
 
-    // state에 저장
     this.state = {
       objs : objects,
       classification : classification_by_vowel

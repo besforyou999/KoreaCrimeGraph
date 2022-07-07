@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import '../css/Buttons.css';
+import '../css/styles.css';
 
 class CrimeButton extends Component {
   constructor(props) {

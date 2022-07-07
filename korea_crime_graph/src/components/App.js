@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import CrimeList from "./CrimeList.js";
-import "../css/App.css";
 import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
@@ -48,8 +47,9 @@ class App extends Component {
 
   buildData () {
     let data_array = [];
-    for (let i = 1 ; i <= 162 ; i++) 
+    for (let i = 1 ; i <= 162 ; i++) {
       data_array.push(this.create_crime_obj(csv_data.data[i]));
+    }
     return data_array;
   }
 

@@ -1,7 +1,7 @@
 {
   "name": "korea_crime_graph",
   "version": "0.1.0",
-  "homepage": "https://besforyou999.github.io/KoreaCrimeGraph",
+  "homepage": "https://besforyou999.github.io/korea_crime_graph/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -11,6 +11,7 @@
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-papaparse": "^4.0.2",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.1",
     "recharts": "^2.1.12",
@@ -41,6 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }, 
-  "homepage" : "https://besforyou999.github.io/korea_crime_graph/"
+  }
 }

@@ -6,7 +6,7 @@ class CrimeList extends Component {
     super(props);
     let classification_by_vowel = [];
 
-    // 객체 배열 범죄분류,가나다순으로 정렬
+    // sort obj array
     const objects = this.props.obj;
     objects.sort(function(a,b) {
       if (a.범죄분류 > b.범죄분류) {
@@ -18,7 +18,7 @@ class CrimeList extends Component {
       }
     });
 
-    // 같은 모음을 가진 범죄분류 배열로 그룹핑
+    // group crimes with same vowels
     let array = [];
     let first_obj = objects[0];
     let charCode = 0;

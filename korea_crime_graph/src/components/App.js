@@ -2,6 +2,18 @@ import axios from "axios";
 import React, {Component} from "react";
 import CrimeList from "./CrimeList.js";
 import "../css/App.css";
+import csvFile from '../resource/crime_location.csv';
+import { readString } from 'react-papaparse';
+
+const papaConfig = {
+  complete: (results, file) => {
+    console.log('Parsing complete:', results, file);
+  },
+  download: true,
+  error: (error, file) => {
+    console.log('Error while parsing:', error, file);
+  },
+};
 
 class App extends Component { 
   state = {
@@ -15,6 +27,7 @@ class App extends Component {
     window.localStorage.setItem('totalData', JSON.stringify(data));
     let obj_keys = Object.keys(data.data.data[0]);
     window.localStorage.setItem('dataKeys', JSON.stringify(obj_keys));
+    readString(csvFile, papaConfig);
   }
 
   componentDidMount() {

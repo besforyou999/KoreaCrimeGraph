@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/korea_crime_graph/static/css/main.7ae66bf1.css",
+    "main.js": "/korea_crime_graph/static/js/main.5e8e1a11.js",
+    "index.html": "/korea_crime_graph/index.html",
+    "main.7ae66bf1.css.map": "/korea_crime_graph/static/css/main.7ae66bf1.css.map",
+    "main.5e8e1a11.js.map": "/korea_crime_graph/static/js/main.5e8e1a11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ae66bf1.css",
+    "static/js/main.5e8e1a11.js"
+  ]
+}

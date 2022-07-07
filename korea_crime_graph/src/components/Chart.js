@@ -6,7 +6,7 @@ import {
 function create_data(crime_name, case_count) {
   return {
     name: crime_name,
-    pv: case_count
+    case: case_count
   };
 }
 
@@ -41,7 +41,7 @@ export default class Chart extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="gray" />
+        <Bar dataKey="case" fill="gray" />
       </BarChart>
     );
   }

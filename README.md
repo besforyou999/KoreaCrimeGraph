@@ -1,5 +1,4 @@
-# KoreaCrimeGraph
-
+# korea crime graph
 
 #### 대한민국 발생 범죄 종류와 해당 범죄 발생 건수를 지역에 따라 출력하는 웹 애플리케이션입니다 
 

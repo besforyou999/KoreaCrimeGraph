@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import CrimeButton from "./CrimeButton.js";
+import Accordion from '@mui/material/Accordion';
 import '../css/styles.css';
+import { AccordionDetails, AccordionSummary } from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 class Crime extends Component {
   constructor(props) {
@@ -32,14 +35,20 @@ class Crime extends Component {
     let idx = 0;
     return(
       <div className="vowelContainer">
-        <div>
-          <h2>{this.state.constantVowel}</h2>
-        </div>
-        <div className="vowelDiv">
-          {this.state.crime_array.map(crime=> (
-            <CrimeButton obj={crime} key={idx++} />
-          ))}
-        </div>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <div>
+              <h2>{this.state.constantVowel}</h2>
+            </div>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="vowelDiv">
+              {this.state.crime_array.map(crime=> (
+                <CrimeButton obj={crime} key={idx++} />
+              ))}
+            </div>
+          </AccordionDetails>
+        </Accordion>
       </div>
     )
   }

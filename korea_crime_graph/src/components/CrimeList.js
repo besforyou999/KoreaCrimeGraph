@@ -4,6 +4,7 @@ import Crime from './Crime.js';
 class CrimeList extends Component {
   constructor(props) {
     super(props);
+    window.scrollTo(0, 0);
     let classification_by_vowel = [];
 
     // sort obj array
@@ -47,7 +48,7 @@ class CrimeList extends Component {
     firstChar = parseInt( (firstChar - 44032 ) / 588 );
     return firstChar;
   }
-  
+
   render() {
     let idx = 0;
     return (
@@ -55,7 +56,7 @@ class CrimeList extends Component {
         <h2>Crimes List</h2>
         {this.state.classification.map(item => (
           <Crime array={item} key={idx++}/>
-        ))} 
+        ))}
       </div>
     );
   }

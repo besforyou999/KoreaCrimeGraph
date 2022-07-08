@@ -6,7 +6,7 @@ import App from './components/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename='korea_crime_graph'>
         <div>
             <Route exact path="/"><App/></Route>
             <Route path="/CrimeSpec"><TestComponent/></Route>

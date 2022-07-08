@@ -7,7 +7,7 @@ class CrimeList extends Component {
     let classification_by_vowel = [];
 
     // sort obj array
-    const objects = this.props.obj;
+    const objects = this.props.obj.data;
     objects.sort(function(a,b) {
       if (a.범죄분류 > b.범죄분류) {
         return 1;

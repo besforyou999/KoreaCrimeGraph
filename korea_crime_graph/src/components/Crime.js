@@ -1,26 +1,18 @@
-import React, {Component} from "react";
+import React, {Component, useState, useEffect} from "react";
 import CrimeButton from "./CrimeButton.js";
 import '../css/styles.css';
 import Accordion from '@mui/material/Accordion';
 import { AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-class Crime extends Component {
-  constructor(props) {
-    super(props);
-    
-    const array = this.props.array;
-    const firstVowelCode = array[0].범죄분류.charCodeAt(0);
-    const firstLetter = String.fromCharCode(firstVowelCode);
-    const constantVowel = this.getConstantVowel(firstLetter);
+function Crime(props) {
+ 
+  const array = props.array;
+  const firstVowelCode = array[0].범죄분류.charCodeAt(0);
+  const firstLetter = String.fromCharCode(firstVowelCode);
+  const constantVowel = getConstantVowel(firstLetter);
 
-    this.state = {
-      crime_array : array,
-      constantVowel: constantVowel
-    }
-  }
-
-  getConstantVowel(kor) {
+  function getConstantVowel(kor) {
     const f = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ',
                'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ',
                'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
@@ -31,27 +23,25 @@ class Crime extends Component {
     return f[fn];
   }
 
-  render() {
-    let idx = 0;
-    return(
-      <div className="vowelContainer">
-        <Accordion>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <div>
-              <h2>{this.state.constantVowel}</h2>
-            </div>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div className="vowelDiv">
-              {this.state.crime_array.map(crime=> (
-                <CrimeButton obj={crime} key={idx++} />
-              ))}
-            </div>
-          </AccordionDetails>
-        </Accordion>
-      </div>
-    )
-  }
+  let idx = 0;
+  return(
+    <div className="vowelContainer">
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <div>
+            <h2>{constantVowel}</h2>
+          </div>
+        </AccordionSummary>
+        <AccordionDetails>
+          <div className="vowelDiv">
+            {array.map(crime=> (
+              <CrimeButton obj={crime} key={idx++} />
+            ))}
+          </div>
+        </AccordionDetails>
+      </Accordion>
+    </div>
+  )
 }
 
 export default Crime;

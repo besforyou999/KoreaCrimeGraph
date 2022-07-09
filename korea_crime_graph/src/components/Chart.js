@@ -4,7 +4,6 @@ import {
 } from 'recharts';
 
 function create_data(crime_name, case_count) {
-  console.log(crime_name, case_count);
   return {
     name: crime_name,
     case: case_count

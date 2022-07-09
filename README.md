@@ -10,10 +10,12 @@
 
 ### Preview
 
-![new_version](https://user-images.githubusercontent.com/74638588/178092250-933be535-9a51-46d2-8d19-725c0da7202e.gif)
+
+![new_version3](https://user-images.githubusercontent.com/74638588/178092323-290ab7c2-fc12-4f6f-8d8f-2c7594080893.gif)
 
 
 <br>
 
-![new_version2](https://user-images.githubusercontent.com/74638588/178092262-cd26de28-8b8c-4f17-94ce-af3c982c730a.gif)
+
+![new_version4](https://user-images.githubusercontent.com/74638588/178092331-9089c372-9d15-4bef-85fb-3163365ea9bc.gif)
 

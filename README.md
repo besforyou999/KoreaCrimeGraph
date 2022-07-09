@@ -10,4 +10,10 @@
 
 ### Preview
 
-![KoreaCrimeGraph](https://user-images.githubusercontent.com/74638588/177470819-6585e7b8-05d5-4d1a-a21a-c965d574817c.gif)
+![new_version](https://user-images.githubusercontent.com/74638588/178092250-933be535-9a51-46d2-8d19-725c0da7202e.gif)
+
+
+<br>
+
+![new_version2](https://user-images.githubusercontent.com/74638588/178092262-cd26de28-8b8c-4f17-94ce-af3c982c730a.gif)
+

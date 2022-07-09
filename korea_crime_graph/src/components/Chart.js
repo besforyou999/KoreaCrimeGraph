@@ -32,10 +32,10 @@ export default class Chart extends PureComponent {
 
   render() {
     return (
-        <ResponsiveContainer width="95%" height="90%">
+        <ResponsiveContainer width="95%" height="95%">
           <BarChart data={this.state.data}
             margin={{
-              top: 0, right: 30, left: 0, bottom: 5,
+              top: 0, right: 10, left: 0, bottom: 5,
             }}
             layout="vertical"
           >

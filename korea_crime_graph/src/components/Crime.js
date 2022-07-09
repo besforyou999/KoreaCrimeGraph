@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import CrimeButton from "./CrimeButton.js";
-import Accordion from '@mui/material/Accordion';
 import '../css/styles.css';
+import Accordion from '@mui/material/Accordion';
 import { AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 

@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect} from "react";
+import React from "react";
 import CrimeButton from "./CrimeButton.js";
 import '../css/styles.css';
 import Accordion from '@mui/material/Accordion';

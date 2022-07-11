@@ -1,14 +1,17 @@
 import React, {useState} from 'react';
 import Crime from './Crime.js';
 import '../css/styles.css';
+import { useSelector, useDispatch } from 'react-redux'
+
 
 function CrimeList(props) {
 
   const [sortType , setSortType] = useState(2); // 1 -> kor, 2 -> crime sum
 
+  const count = useSelector(state => state.csvData.value);
   let classification_by_vowel = [];
-  // sort obj array
-  const objects = props.obj.data;
+  const objects1 = count.data;
+  const objects = [...objects1];
   objects.sort(function(a,b) {
     if (a.범죄분류 > b.범죄분류) {
       return 1;

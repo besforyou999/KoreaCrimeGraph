@@ -3,14 +3,12 @@ import CrimeList from "./CrimeList.js";
 import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
-import {useDispatch} from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { setCsvData } from '../features/csvData/csvDataSlice';
 
 function App () { 
-  const [data, setData] = useState([]);
-  const [isLoading, setLoading] = useState(true);
 
-  //const count = useSelector(state => state.csvData.value);
+  const [isLoading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   function buildData() {
@@ -19,7 +17,8 @@ function App () {
       header: true,
       dynamicTyping: true,
       complete: results => {
-        parseCSV(results);
+        dispatch(setCsvData(results));
+        setLoading(false);
       },
       error: () => {
         console.log("error while parsing csv");
@@ -27,15 +26,9 @@ function App () {
     });
   }
 
-  function parseCSV(results) {
-    setData(results);
-    setLoading(false);
-  }
-
   useEffect(()=>{
-    dispatch(setCsvData(data));
     buildData();
-  }, [data])
+  }, [])
 
   return (
     <div className="container">
@@ -45,7 +38,7 @@ function App () {
         </div>
       ) : (
       <div>
-        <CrimeList obj={data}></CrimeList>
+        <CrimeList/>
       </div>
       )}
     </div>

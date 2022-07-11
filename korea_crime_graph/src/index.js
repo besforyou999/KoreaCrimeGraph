@@ -5,8 +5,12 @@ import TestComponent from './components/CrimeSpec';
 import App from './components/App';
 import ScrollToTop from './components/ScrollToTop';
 
+import store from './app/store';
+import { Provider } from 'react-redux';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    <Provider store={store}>
     <BrowserRouter basename='korea_crime_graph'>
         <div>
             <Route exact path="/"><App/></Route>
@@ -14,4 +18,5 @@ root.render(
             <Route path="/CrimeSpec"><TestComponent/></Route>
         </div>
     </BrowserRouter>
+    </Provider>
 );

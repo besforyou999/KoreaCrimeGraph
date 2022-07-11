@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Crime from './Crime.js';
+import '../css/styles.css';
 
 function CrimeList(props) {
+
+  const [sortType , setSortType] = useState(2); // 1 -> kor, 2 -> crime sum
 
   let classification_by_vowel = [];
   // sort obj array
@@ -41,15 +44,20 @@ function CrimeList(props) {
   }
 
   let idx = 0;
-  return (
-    <div>
-      <h2>Crimes List</h2>
-      {classification_by_vowel.map(item => (
-        <Crime array={item} key={idx++}/>
-      ))}
-    </div>
-  );
-  
+  if (sortType === 1) {
+    return (<div>Sort test</div>);
+  } else {
+    return (
+      <div>
+        <h2>대한민국 범죄 리스트</h2>
+        <div>
+        {classification_by_vowel.map(item => (
+          <Crime array={item} key={idx++}/>
+        ))}
+        </div>
+      </div>
+    );
+  }
 }
 
 

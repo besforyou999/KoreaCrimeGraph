@@ -3,9 +3,15 @@ import CrimeList from "./CrimeList.js";
 import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
+import {useSelector, useDispatch} from 'react-redux';
+import { setCsvData } from '../features/csvData/csvDataSlice';
+
 function App () { 
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
+
+  //const count = useSelector(state => state.csvData.value);
+  const dispatch = useDispatch();
 
   function buildData() {
     Papa.parse(csvFile, {
@@ -27,8 +33,9 @@ function App () {
   }
 
   useEffect(()=>{
+    dispatch(setCsvData(data));
     buildData();
-  })
+  }, [data])
 
   return (
     <div className="container">
@@ -47,3 +54,4 @@ function App () {
 
 export default App;
 
+/*<button onClick={() => dispatch(setCsvData([100]))}>Testing Redux</button>*/

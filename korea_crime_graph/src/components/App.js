@@ -3,7 +3,7 @@ import CrimeList from "./CrimeList.js";
 import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import { setCsvData } from '../features/csvData/csvDataSlice';
 
 function App () { 

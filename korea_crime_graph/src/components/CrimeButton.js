@@ -4,16 +4,13 @@ import '../css/styles.css';
 
 function CrimeButton(props) {
   const object = props.obj;
-  let locations = Object.keys(object);
-  locations.splice(7,1);
-  
+  console.log(object);
   return (
     <div>
       <Link to={{
         pathname: 'CrimeSpec',
         state: {
-          object: object,
-          locations: locations
+          object: object
         }
       }}>
         <button className='CrimeBtn'>

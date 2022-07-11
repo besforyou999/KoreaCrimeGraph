@@ -14,11 +14,9 @@ export default class Chart extends PureComponent {
   constructor(props) {
     super(props);
     let new_data = [];
-    const locations = this.props.locations;
+    const locations1 = this.props.locations;
+    const locations = [...locations1];
     const object = this.props.obj;
-
-    if (locations.length >= 17)
-      locations.shift();
 
     locations.map( element => (
       new_data.push(create_data(element, object[element]))

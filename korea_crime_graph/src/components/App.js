@@ -4,7 +4,7 @@ import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
 import { useDispatch} from 'react-redux';
-import { setCsvData } from '../features/csvData/csvDataSlice';
+import { setCsvData , setLocations } from '../features/csvData/csvDataSlice';
 
 function App () { 
 
@@ -17,6 +17,9 @@ function App () {
       header: true,
       dynamicTyping: true,
       complete: results => {
+        const keys = Object.keys(results.data[0]);
+        keys.splice(0,1);
+        dispatch(setLocations(keys));
         dispatch(setCsvData(results));
         setLoading(false);
       },
@@ -46,5 +49,3 @@ function App () {
 }
 
 export default App;
-
-/*<button onClick={() => dispatch(setCsvData([100]))}>Testing Redux</button>*/

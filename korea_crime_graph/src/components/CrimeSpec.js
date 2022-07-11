@@ -1,14 +1,16 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import Chart from './Chart.js';
 import '../css/styles.css';
 
 export default function CrimeSpec() {
   const location = useLocation();
   const object = location.state.object;
-  const locations = location.state.locations;
+  const locations = useSelector(state => state.csvData.locations);
   const crime_class = object.범죄분류;
+  
   return (
     <div className='chartPage'>
       <div>
@@ -27,4 +29,5 @@ export default function CrimeSpec() {
       </div>
     </div>
   );
+  
 }

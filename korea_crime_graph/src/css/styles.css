@@ -1,0 +1,29 @@
+.chartContainer {
+  width: device-width;
+  height: 100%;
+}
+
+.chartPage {
+  width: device-width;
+  height: 900px;
+}
+
+.chartPage2 {
+  width: device-width;
+  height: 11000px;
+}
+
+.crimeBtn {
+  font-size: 2vmin;
+  padding: 10px;
+  margin: 5px;
+  height: 4vmax;
+}
+
+
+
+.vowelDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -9,7 +9,7 @@ export default function Chart2(props) {
       <ResponsiveContainer width="95%" height="95%">
         <BarChart data={props.data}
           margin={{
-            top: 0, right: 10, left: 20, bottom: 5,
+            top: 20, right: 10, left: 20, bottom: 5,
           }}
           layout="vertical"
           >

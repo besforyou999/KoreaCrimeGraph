@@ -1,7 +1,6 @@
 import React from 'react'; 
 import {useSelector} from 'react-redux';
 import Chart2 from '../components/Chart2';
-import Chart2Texts from '../components/Chart2Texts';
 import '../css/styles.css';
 
 export default function ListSortByCase() {
@@ -29,9 +28,6 @@ export default function ListSortByCase() {
   
   return (
     <div className='crimeCaseList'>
-      <div className='chartPageText'>
-        <Chart2Texts data={crime_name_arr}/>
-      </div>
       <div className='chartPage2'>
         <Chart2 data={new_arr}/>
       </div>

@@ -6,7 +6,7 @@ import {
 
 export default function Chart2(props) {
   return (
-      <ResponsiveContainer width="95%" height="95%">
+      <ResponsiveContainer width="100%" height="100%">
         <BarChart data={props.data}
           margin={{
             top: 20, right: 10, left: 20, bottom: 5,

@@ -1,6 +1,8 @@
 import React from 'react'; 
 import {useSelector} from 'react-redux';
 import Chart2 from '../components/Chart2';
+import Chart2Texts from '../components/Chart2Texts';
+import '../css/styles.css';
 
 export default function ListSortByCase() {
 
@@ -8,6 +10,7 @@ export default function ListSortByCase() {
   const locations = useSelector(state => state.csvData.locations);
   const classKey = '범죄분류';
   let new_arr = [];
+  let crime_name_arr = [];
   
   for (let i = 0 ; i < data.length ; i++) {
     let item = data[i];
@@ -20,9 +23,18 @@ export default function ListSortByCase() {
     return b.number - a.number;
   })
 
+  for (let i = 0 ; i < new_arr.length ; i++) {
+    crime_name_arr.push(new_arr[i].name);
+  }
+  
   return (
-    <div className='chartPage2'>
-      <Chart2 data={new_arr}/>
+    <div className='crimeCaseList'>
+      <div className='chartPageText'>
+        <Chart2Texts data={crime_name_arr}/>
+      </div>
+      <div className='chartPage2'>
+        <Chart2 data={new_arr}/>
+      </div>
     </div>
   )
 }

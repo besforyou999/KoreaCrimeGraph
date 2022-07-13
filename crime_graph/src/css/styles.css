@@ -9,7 +9,7 @@
 }
 
 .chartPage2 {
-  width: device-width;
+  width: 100%;
   height: 11000px;
 }
 
@@ -17,11 +17,21 @@
   font-size: 2vmin;
   padding: 10px;
   margin: 5px;
-  height: 4vmax;
+  height: 6vh;
 }
 
 .vowelDiv {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.crimeCaseList {
+  display: flex;
+  flex-direction: row;
+}
+
+.crimeTextColumn {
+  display: flex;
+  flex-direction: column;
 }

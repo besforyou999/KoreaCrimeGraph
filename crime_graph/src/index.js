@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
-      <BrowserRouter >
+      <BrowserRouter basename='/Korea_crime_graph'>
           <Route exact path="/"><App/></Route>
           <ScrollToTop/>
           <Route path="/CrimeSpec"><CrimeSpec/></Route>

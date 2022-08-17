@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
-export default function Chart2(props) {
+export default function CrimeChartSortedByCaseCount(props) {
   const history = useHistory();
   const csvData = useSelector(state => state.csvData.csvData).data;
 

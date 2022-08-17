@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
-export default function CrimeChartSortedByCaseCount(props) {
+function CrimeChartSortedByCaseCount(props) {
   const history = useHistory();
   const csvData = useSelector(state => state.csvData.csvData).data;
 
@@ -46,3 +46,5 @@ export default function CrimeChartSortedByCaseCount(props) {
       </ResponsiveContainer>
   );
 }
+
+export default React.memo(CrimeChartSortedByCaseCount);

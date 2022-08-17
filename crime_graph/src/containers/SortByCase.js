@@ -18,7 +18,7 @@ function calc_case_sum(obj, location) {
   return sum;
 }
 
-export default function ListSortByCase() {
+function SortByCase() {
   const data = useSelector(state => state.csvData.csvData).data;
   const locations = useSelector(state => state.csvData.locations);
   const classKey = '범죄분류';
@@ -47,3 +47,5 @@ export default function ListSortByCase() {
     </div>
   )
 }
+
+export default React.memo(SortByCase);

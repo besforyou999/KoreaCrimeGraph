@@ -15,7 +15,6 @@ function classifyByVowel(data) {
     if (prevChar !== curChar) {
       classification.push(vowel_class);
       vowel_class = [];
-      //vowel_class.push(data[i]);
     }
 
     vowel_class.push(data[i]);
@@ -36,7 +35,7 @@ function getConstantVowel(kor) {
   return f[fn];
 }
 
-export default function ListSortByKor() {
+function SortByKor() {
   
   const data2 = useSelector(state => state.csvData.csvData).data;
   const data = [...data2];
@@ -56,3 +55,5 @@ export default function ListSortByKor() {
     </div>
   );
 }
+
+export default React.memo(SortByKor);

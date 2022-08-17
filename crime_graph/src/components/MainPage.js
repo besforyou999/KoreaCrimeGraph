@@ -3,7 +3,7 @@ import SortCrimeDataBy from './SortCrimeDataBy.js';
 import PageTitle from './PageTitle';
 import '../css/styles.css';
 
-export default function MainPage() {
+function MainPage() {
 
   const [sortType , setSortType] = useState(1); // 1 -> kor, 2 -> crime sum
 
@@ -24,3 +24,4 @@ export default function MainPage() {
   
 }
 
+export default React.memo(MainPage);

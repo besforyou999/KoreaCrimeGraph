@@ -43,4 +43,4 @@ function CrimeListGroupedByVowel(props) {
   )
 }
 
-export default CrimeListGroupedByVowel;
+export default React.memo(CrimeListGroupedByVowel);

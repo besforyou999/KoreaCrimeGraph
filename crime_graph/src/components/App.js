@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import CrimeList from "./CrimeList.js";
+import MainPage from "./MainPage.js";
 import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCsvData , setLocations } from '../features/csvData/csvDataSlice';
 
 function App () { 
@@ -41,7 +41,7 @@ function App () {
         </div>
       ) : (
       <div>
-        <CrimeList/>
+        <MainPage/>
       </div>
       )}
     </div>

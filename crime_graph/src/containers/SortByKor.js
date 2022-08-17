@@ -1,26 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Crime from '../components/Crime';
-
-export default function ListSortByKor() {
-  
-  const data2 = useSelector(state => state.csvData.csvData).data;
-  const data = [...data2];
-  const crimeCaseKey = '범죄분류';
-  data.sort(function(a,b) {
-    return a[crimeCaseKey].charCodeAt(0) - b[crimeCaseKey].charCodeAt(0);
-  })
-
-  let classification = classifyByVowel(data);
-  let idx = 0;
-  return (
-    <div>
-      {classification.map(item => (
-        <Crime array={item} key={idx++}/>
-      ))}
-    </div>
-  );
-}
+import CrimeListGroupedByVowel from '../components/CrimeListGroupedByVowel';
 
 function classifyByVowel(data) {
   const crimeCaseKey = '범죄분류';
@@ -45,7 +25,6 @@ function classifyByVowel(data) {
   return classification;
 }
 
-
 function getConstantVowel(kor) {
   const f = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ',
              'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ',
@@ -55,4 +34,24 @@ function getConstantVowel(kor) {
   uni = uni - ga;
   let fn = parseInt(uni / 588);
   return f[fn];
+}
+
+export default function ListSortByKor() {
+  
+  const data2 = useSelector(state => state.csvData.csvData).data;
+  const data = [...data2];
+  const crimeCaseKey = '범죄분류';
+  data.sort(function(a,b) {
+    return a[crimeCaseKey].charCodeAt(0) - b[crimeCaseKey].charCodeAt(0);
+  })
+
+  let classification = classifyByVowel(data);
+  let idx = 0;
+  return (
+    <div>
+      {classification.map(item => (
+        <CrimeListGroupedByVowel array={item} key={idx++}/>
+      ))}
+    </div>
+  );
 }

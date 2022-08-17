@@ -6,7 +6,8 @@ import { AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Crime(props) {
-  const array = props.array;
+  const array = [...props.array];
+  array.pop(0)
   const firstVowelCode = array[0].범죄분류.charCodeAt(0);
   const firstLetter = String.fromCharCode(firstVowelCode);
   const constantVowel = getConstantVowel(firstLetter);

@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
-import SortBy from './SortBy.js';
-import ListTitle from './ListTitle';
+import SortCrimeDataBy from './SortCrimeDataBy.js';
+import PageTitle from './PageTitle';
 import '../css/styles.css';
 
-function CrimeList() {
+export default function MainPage() {
 
   const [sortType , setSortType] = useState(1); // 1 -> kor, 2 -> crime sum
 
   return ( 
     <div>
-      <ListTitle/>
+      <PageTitle/>
       <div>
         <button className='crimeBtn' onClick={() => {
           setSortType(1);
@@ -18,11 +18,9 @@ function CrimeList() {
           setSortType(2);
         }}>범죄건순</button>
       </div>
-        <SortBy type={sortType}/>
+        <SortCrimeDataBy type={sortType}/>
     </div>
   );
   
 }
 
-
-export default CrimeList;

@@ -15,7 +15,7 @@ function classifyByVowel(data) {
     if (prevChar !== curChar) {
       classification.push(vowel_class);
       vowel_class = [];
-      vowel_class.push(data[i]);
+      //vowel_class.push(data[i]);
     }
 
     vowel_class.push(data[i]);
@@ -43,10 +43,11 @@ export default function ListSortByKor() {
   const crimeCaseKey = '범죄분류';
   data.sort(function(a,b) {
     return a[crimeCaseKey].charCodeAt(0) - b[crimeCaseKey].charCodeAt(0);
-  })
+  });
 
   let classification = classifyByVowel(data);
   let idx = 0;
+
   return (
     <div>
       {classification.map(item => (

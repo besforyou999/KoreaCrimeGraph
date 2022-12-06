@@ -19,3 +19,8 @@
 
 ![new_version4](https://user-images.githubusercontent.com/74638588/178092331-9089c372-9d15-4bef-85fb-3163365ea9bc.gif)
 
+
+#### 기술 스택
+
+* React
+

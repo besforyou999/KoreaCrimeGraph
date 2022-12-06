@@ -23,4 +23,8 @@
 #### 기술 스택
 
 * React
+* Redux
 
+#### 사용해보세요
+
+https://besforyou999.github.io/korea_crime_graph/

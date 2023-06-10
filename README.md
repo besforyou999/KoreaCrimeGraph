@@ -24,6 +24,8 @@
 
 * React
 * Redux
+* recharts
+* MUI React components
 
 #### 사용해보세요
 

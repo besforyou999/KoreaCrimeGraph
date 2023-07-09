@@ -5,10 +5,9 @@ import '../css/styles.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setMainPageType } from '../features/csvData/csvDataSlice.js';
 
-
 function MainPage() {
 
-  const mainPageType = useSelector( (state) => state.csvData.mainPageType );
+  const mainPageType = useSelector(state => state.csvData.mainPageType);
   const dispatch = useDispatch();
 
   return ( 

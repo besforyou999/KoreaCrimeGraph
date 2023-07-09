@@ -4,7 +4,7 @@ import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
 import { useDispatch } from 'react-redux';
-import { setCsvData , setLocations } from '../features/csvData/csvDataSlice';
+import { setCsvData , setLocations} from '../features/csvData/csvDataSlice';
 
 function App () { 
 
@@ -31,7 +31,7 @@ function App () {
 
   useEffect(()=>{
     buildData();
-  }, [])
+  });
 
   return (
     <div className="container">

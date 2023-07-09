@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
 export const csvDataSlice = createSlice({
   name: 'csvData',
   initialState: {
     locations: [],
-    csvData: []
+    csvData: [],
+    mainPageType: 1,
   },
   reducers: {
     setLocations: (state, action) => {
@@ -14,9 +14,12 @@ export const csvDataSlice = createSlice({
     setCsvData: (state, action) => {
       state.csvData = action.payload;
     },
+    setMainPageType: (state, action) => {
+      state.mainPageType = action.payload;
+    }
   }
 })
 
-export const {setLocations, setCsvData} = csvDataSlice.actions;
+export const {setLocations, setCsvData, setMainPageType} = csvDataSlice.actions;
 
 export default csvDataSlice.reducer;

@@ -1,22 +1,26 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import '../css/styles.css';
 
 function CrimeButton(props) {
   const object = props.obj;
+  const history = useHistory();
+
+  function handleClick() {
+  
+    history.push({
+      pathname: '/CrimeSpec',
+      state: {
+        object: object
+      }
+    })
+  }
 
   return (
     <div>
-      <Link to={{
-        pathname: 'CrimeSpec',
-        state: {
-          object: object
-        }
-      }}>
-        <button className='crimeBtn'>
+        <button className='crimeBtn' onClick={ () => handleClick() }>
           {object.범죄분류}
         </button>
-      </Link>
     </div>
   ); 
   

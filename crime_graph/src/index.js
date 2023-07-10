@@ -12,8 +12,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
       <BrowserRouter basename=''>
-          <Route exact path="/korea_crime_graph"><App/></Route>
-          <ScrollToTop/>
+          <Route path="/korea_crime_graph"><App/></Route>
+            <ScrollToTop/>
           <Route path="/CrimeSpec"><CrimeSpec/></Route>
       </BrowserRouter> 
     </Provider>

@@ -31,7 +31,7 @@ function App () {
 
   useEffect(()=>{
     buildData();
-  }, [])
+  })
 
   return (
     <div className="container">

@@ -13,6 +13,7 @@ function MainPage() {
   return ( 
     <div>
       <PageTitle/>
+      
       <div>
         <button className='crimeBtn' onClick={() => {
           dispatch(setMainPageType(1));
@@ -21,7 +22,8 @@ function MainPage() {
           dispatch(setMainPageType(2));
         }}>범죄건순</button>
       </div>
-        <SortCrimeDataBy type={mainPageType}/>
+      
+      <SortCrimeDataBy type={mainPageType}/>
     </div>
   );
   

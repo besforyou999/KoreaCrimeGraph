@@ -13,7 +13,7 @@ export default function CrimeSpec() {
   return (
     <div className='chartPage'>
       <div>
-        <Link to="/">
+        <Link to="/korea_crime_graph">
           <button className='HomeBtn'>
             Home
           </button>

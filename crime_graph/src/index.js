@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
       <BrowserRouter basename=''>
-          <Route exact path="/"><App/></Route>
+          <Route exact path="/korea_crime_graph"><App/></Route>
           <ScrollToTop/>
           <Route path="/CrimeSpec"><CrimeSpec/></Route>
       </BrowserRouter> 

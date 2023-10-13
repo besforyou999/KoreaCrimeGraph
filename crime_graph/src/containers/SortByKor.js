@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import CrimeListGroupedByVowel from '../components/CrimeListGroupedByVowel';
+import CrimeListVowel from '../components/CrimeListVowel';
 
 function classifyByVowel(data) {
   const crimeCaseKey = '범죄분류';
@@ -50,7 +50,7 @@ function SortByKor() {
   return (
     <div>
       {classification.map(item => (
-        <CrimeListGroupedByVowel array={item} key={idx++}/>
+        <CrimeListVowel array={item} key={idx++}/>
       ))}
     </div>
   );

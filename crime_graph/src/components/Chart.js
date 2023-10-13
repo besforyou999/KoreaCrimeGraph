@@ -1,28 +1,16 @@
 import React, { PureComponent } from 'react';
-import {
-  XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, ResponsiveContainer
-} from 'recharts';
-
-function create_data(crime_name, case_count) {
-  return {
-    name: crime_name,
-    case: case_count
-  };
-}
+import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, ResponsiveContainer } from 'recharts';
 
 export default class Chart extends PureComponent {
   constructor(props) {
     super(props);
-    let new_data = [];
-    const locations1 = this.props.locations;
-    const locations = [...locations1];
+
+    const data = [];
+    const locations = [...this.props.locations];
     const object = this.props.obj;
 
-    locations.map( element => new_data.push(create_data(element, object[element])));
-
-    this.state = {
-      data: new_data
-    }
+    locations.map( element => data.push({ name: element, case: object[element] }));
+    this.state = { data }
   }
 
   render() {

@@ -5,7 +5,7 @@ import Accordion from '@mui/material/Accordion';
 import { AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-function CrimeListGroupedByVowel(props) {
+function CrimeListVowel(props) {
   const array = [...props.array];
   const firstVowelCode = array[0].범죄분류.charCodeAt(0);
   const firstLetter = String.fromCharCode(firstVowelCode);
@@ -15,10 +15,8 @@ function CrimeListGroupedByVowel(props) {
     const f = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ',
                'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ',
                'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
-    const ga = 44032;
-    let uni = kor.charCodeAt(0);
-    uni = uni - ga;
-    let fn = parseInt(uni / 588);
+    const uni = kor.charCodeAt(0) - 44032;
+    const fn = parseInt(uni / 588);
     return f[fn];
   }
 
@@ -26,7 +24,7 @@ function CrimeListGroupedByVowel(props) {
   return(
     <div className="vowelContainer">
       <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
           <div>
             <h2>{constantVowel}</h2>
           </div>
@@ -43,4 +41,4 @@ function CrimeListGroupedByVowel(props) {
   )
 }
 
-export default React.memo(CrimeListGroupedByVowel);
+export default React.memo(CrimeListVowel);

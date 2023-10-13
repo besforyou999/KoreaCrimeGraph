@@ -24,9 +24,7 @@ function App () {
         dispatch(setCsvData(results));
         setLoading(false); // 파싱 성공 -> 로딩 종료
       },
-      error: () => {
-        console.log("error while parsing csv");
-      },
+      error: () => console.log("error while parsing csv"),
     });
   }
 
@@ -37,16 +35,12 @@ function App () {
   return (
     <div className="container">
       {isLoading ? 
-        (
-          <div className="loading">
+        ( <div className="loading">
             <span>Loading...</span>
-          </div>
-        )
-        : (
-          <div>
-            <MainPage/>
-          </div>
-        )
+          </div> )
+        : ( <div>
+              <MainPage/>
+            </div> )
       }
     </div>
   );

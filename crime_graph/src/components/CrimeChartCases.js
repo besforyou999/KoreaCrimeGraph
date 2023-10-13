@@ -1,29 +1,24 @@
 import React from 'react';
-import {
-  XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, ResponsiveContainer
-} from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, ResponsiveContainer } from 'recharts';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
-function CrimeChartSortedByCaseCount(props) {
+function CrimeChartCases(props) {
   const history = useHistory();
   const csvData = useSelector(state => state.csvData.csvData).data;
 
   function handleClick(name) {
-    let obj;
     for (let i = 0 ; i < csvData.length ; i++) {
       if (name === csvData[i].범죄분류) {
-        obj = csvData[i];
+        const object = csvData[i];
+        history.push({
+          pathname: '/CrimeSpec',
+          state: { object }
+        })
         break;
       }
     }
-    history.push({
-      pathname: '/CrimeSpec',
-      state: {
-        object: obj
-      }
-    })
   }
 
   return (
@@ -39,12 +34,10 @@ function CrimeChartSortedByCaseCount(props) {
           <YAxis dataKey="name" type="category"/>
           <Tooltip />
           <Legend />
-          <Bar dataKey="number" fill="gray" onClick={ function(e) {
-            handleClick(e.name);
-          }}/>
+          <Bar dataKey="number" fill="gray" onClick={ e => handleClick(e.name) }/>
         </BarChart>
       </ResponsiveContainer>
   );
 }
 
-export default React.memo(CrimeChartSortedByCaseCount);
+export default React.memo(CrimeChartCases);

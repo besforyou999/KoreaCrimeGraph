@@ -7,7 +7,6 @@ function CrimeButton(props) {
   const history = useHistory();
 
   function handleClick() {
-  
     history.push({
       pathname: '/CrimeSpec',
       state: {
@@ -18,7 +17,7 @@ function CrimeButton(props) {
 
   return (
     <div>
-        <button className='crimeBtn' onClick={ () => handleClick() }>
+        <button className='crimeBtn' onClick={() => handleClick()}>
           {object.범죄분류}
         </button>
     </div>

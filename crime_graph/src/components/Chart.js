@@ -18,9 +18,7 @@ export default class Chart extends PureComponent {
     const locations = [...locations1];
     const object = this.props.obj;
 
-    locations.map( element => (
-      new_data.push(create_data(element, object[element]))
-    ));
+    locations.map( element => new_data.push(create_data(element, object[element])));
 
     this.state = {
       data: new_data
@@ -31,11 +29,8 @@ export default class Chart extends PureComponent {
     return (
         <ResponsiveContainer width="95%" height="95%">
           <BarChart data={this.state.data}
-            margin={{
-              top: 0, right: 10, left: 0, bottom: 5,
-            }}
-            layout="vertical"
-          >
+            margin={{ top: 0, right: 10, left: 0, bottom: 5 }}
+            layout="vertical">
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number"/>
             <YAxis dataKey="name" type="category"/>

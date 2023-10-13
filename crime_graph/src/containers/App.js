@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from "react";
-import MainPage from "./MainPage.js";
+import MainPage from "../components/MainPage.js";
 import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
 import { useDispatch } from 'react-redux';
-import { setCsvData , setLocations } from '../features/csvData/csvDataSlice';
+import { setCsvData , setLocations } from '../features/csvData/csvDataSlice.js';
 
 function App () { 
 
   const [isLoading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  function buildData() {
+  // 범죄데이터 csv 파일 파싱 함수
+  function parseCsvFile() {
     Papa.parse(csvFile, {
       download: true,
       header: true,
@@ -21,7 +22,7 @@ function App () {
         keys.splice(0,1);
         dispatch(setLocations(keys));
         dispatch(setCsvData(results));
-        setLoading(false);
+        setLoading(false); // 파싱 성공 -> 로딩 종료
       },
       error: () => {
         console.log("error while parsing csv");
@@ -30,20 +31,23 @@ function App () {
   }
 
   useEffect(()=>{
-    buildData();
+    parseCsvFile();
   })
 
   return (
     <div className="container">
-      {isLoading ? (
-        <div className="loading">
-          <span>Loading...</span>
-        </div>
-      ) : (
-      <div>
-        <MainPage/>
-      </div>
-      )}
+      {isLoading ? 
+        (
+          <div className="loading">
+            <span>Loading...</span>
+          </div>
+        )
+        : (
+          <div>
+            <MainPage/>
+          </div>
+        )
+      }
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Route} from 'react-router-dom';
 import CrimeSpec from './components/CrimeSpec';
-import App from './components/App';
+import App from './containers/App';
 import ScrollToTop from './components/ScrollToTop';
 
 import store from './app/store';

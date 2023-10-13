@@ -14,7 +14,14 @@
 }
 
 .crimeBtn {
-  font-size: 2vmin;
+  font-size: 1.2rem;
+  padding: 10px;
+  margin: 5px;
+  height: 6vh;
+}
+
+.HomeBtn {
+  font-size: 1.2rem;
   padding: 10px;
   margin: 5px;
   height: 6vh;

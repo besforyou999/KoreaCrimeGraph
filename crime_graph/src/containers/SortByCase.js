@@ -5,8 +5,9 @@ import '../css/styles.css';
 
 function calc_case_sum(obj, location) {
   let sum = 0;
-  for (let i = 0 ; i < location.length ; i++) 
-    sum += obj[location[i]];
+
+  for (const ele of location) 
+    sum += obj[ele]
   
   return sum;
 }
@@ -26,8 +27,8 @@ function SortByCase() {
 
   new_arr.sort((a, b) => b.number - a.number)
 
-  for (let i = 0 ; i < new_arr.length ; i++) 
-    crime_name_arr.push(new_arr[i].name);
+  for (const element of new_arr) 
+      crime_name_arr.push(element.name);
   
   return (
     <div className='crimeCaseList'>

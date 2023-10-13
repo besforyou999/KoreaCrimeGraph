@@ -14,10 +14,10 @@ function MainPage() {
     <div>
       <MainPageTitle/>
       <div>
-        <button className='crimeBtn' onClick={() => {
+        <button className='btn' onClick={() => {
           dispatch(setMainPageType(1));
         }}>가나다순</button>
-        <button className='crimeBtn' onClick={() => {
+        <button className='btn' onClick={() => {
           dispatch(setMainPageType(2));
         }}>범죄건순</button>
       </div>

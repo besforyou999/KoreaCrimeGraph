@@ -3,7 +3,6 @@ import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, Responsive
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-
 function CrimeChartCases(props) {
   const history = useHistory();
   const csvData = useSelector(state => state.csvData.csvData).data;

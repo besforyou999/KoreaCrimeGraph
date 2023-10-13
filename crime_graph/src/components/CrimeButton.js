@@ -16,7 +16,7 @@ export default function CrimeButton(props) {
   return (
     <div>
         <button 
-          className='crimeBtn'
+          className='btn'
           onClick={() => handleClick()}>
           {object.범죄분류}
         </button>

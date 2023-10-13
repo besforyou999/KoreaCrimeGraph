@@ -14,7 +14,7 @@ export default function CrimeSpec() {
     <div className='chartPage'>
       <div>
         <Link to="/korea_crime_graph">
-          <button className='HomeBtn'>
+          <button className='btn'>
             Home
           </button>
         </Link>

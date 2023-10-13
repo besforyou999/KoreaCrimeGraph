@@ -35,12 +35,16 @@ function App () {
   return (
     <div className="container">
       {isLoading ? 
-        ( <div className="loading">
+        ( 
+          <div className="loading">
             <span>Loading...</span>
-          </div> )
-        : ( <div>
-              <MainPage/>
-            </div> )
+          </div> 
+        ) :
+        ( 
+          <div>
+            <MainPage/>
+          </div>
+        )
       }
     </div>
   );

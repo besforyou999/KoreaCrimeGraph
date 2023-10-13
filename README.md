@@ -22,10 +22,10 @@
 
 #### 기술 스택
 
-* React
-* Redux
-* recharts
-* MUI React components
+* *Language* : HTML, CSS, JavaScript
+* *Library*  : React, Redux, recharts, MUI React components
+* *Deploy*   : Github-pages
+* *Tool*     : Git
 
 #### 사용해보세요
 

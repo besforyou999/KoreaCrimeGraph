@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Route} from 'react-router-dom';
 import CrimeSpec from './components/CrimeSpec';
 import App from './containers/App';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './containers/ScrollToTop';
 
 import store from './app/store';
 import { Provider } from 'react-redux';

@@ -28,3 +28,4 @@ function MainPage() {
 }
 
 export default React.memo(MainPage);
+

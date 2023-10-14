@@ -1,6 +1,7 @@
 import React from 'react';
 import SortCrimeDataBy from './SortCrimeDataBy.js';
 import MainPageTitle from './MainPageTitle.js';
+import Button from './Button.js';
 import '../css/styles.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setMainPageType } from '../features/csvData/csvDataSlice.js';
@@ -14,12 +15,8 @@ function MainPage() {
     <div>
       <MainPageTitle/>
       <div>
-        <button className='btn' onClick={() => {
-          dispatch(setMainPageType(1));
-        }}>가나다순</button>
-        <button className='btn' onClick={() => {
-          dispatch(setMainPageType(2));
-        }}>범죄건순</button>
+        <Button text="가나다순" click={() => dispatch(setMainPageType(1))}/>
+        <Button text="범죄건순" click={() => dispatch(setMainPageType(2))}/>
       </div>
       <SortCrimeDataBy type={mainPageType}/>
     </div>

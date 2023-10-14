@@ -1,7 +1,7 @@
 import React from 'react';
-import SortCrimeDataBy from '../components/SortCrimeDataBy.js';
-import MainPageTitle from '../components/MainPageTitle.js';
-import Button from '../components/Button.js';
+import SortCrimeDataBy from '../presentational/SortCrimeDataBy.js';
+import MainPageTitle from '../presentational/MainPageTitle.js';
+import Button from '../presentational/Button.js';
 import '../css/styles.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setMainPageType } from '../features/csvData/csvDataSlice.js';

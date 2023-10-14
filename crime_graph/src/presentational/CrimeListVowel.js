@@ -1,5 +1,5 @@
 import React from "react";
-import CrimeButton from "./CrimeButton.js";
+import CrimeButton from "../containers/CrimeButton.js";
 import '../css/styles.css';
 import Accordion from '@mui/material/Accordion';
 import { AccordionDetails, AccordionSummary } from "@mui/material";
@@ -31,7 +31,7 @@ function CrimeListVowel(props) {
         </AccordionSummary>
         <AccordionDetails>
           <div className="vowelDiv">
-            {array.map(crime=> (
+            {array.map(crime => (
               <CrimeButton obj={crime} key={idx++} />
             ))}
           </div>

@@ -9,7 +9,7 @@ function CrimeChartCases(props) {
 
   function handleClick(name) {
     for (let i = 0 ; i < csvData.length ; i++) {
-      if (name === csvData[i].범죄분류) {
+      if (name === csvData[i]['범죄분류']) {
         const object = csvData[i];
         history.push({
           pathname: '/CrimeSpec',

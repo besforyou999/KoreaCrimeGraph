@@ -2,21 +2,20 @@ import React from 'react';
 import { Link , useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Chart from './Chart.js';
+import Button from './Button.js'
 import '../css/styles.css';
 
 export default function CrimeSpec() {
   const location = useLocation();
   const object = location.state.object;
   const locations = useSelector(state => state.csvData.locations);
-  const crime_class = object.범죄분류;
+  const crime_class = object['범죄분류'];
   
   return (
     <div className='chartPage'>
       <div>
         <Link to="/korea_crime_graph">
-          <button className='btn'>
-            Home
-          </button>
+          <Button text="Home"/>
         </Link>
       </div>
       <div className='CrimeClass'>
@@ -26,7 +25,5 @@ export default function CrimeSpec() {
         <Chart locations={locations} obj={object}/>
       </div>
     </div>
-    
   );
-  
 }

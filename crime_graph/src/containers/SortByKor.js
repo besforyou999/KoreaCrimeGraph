@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import CrimeListVowel from '../components/CrimeListVowel';
+import CrimeListVowel from '../presentational/CrimeListVowel';
 
 function classifyByVowel(data) {
   const crimeCaseKey = '범죄분류';

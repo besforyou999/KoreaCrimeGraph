@@ -1,15 +1,14 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, ResponsiveContainer } from 'recharts';
 
-export default class Chart extends PureComponent {
+export default class Chart extends Component {
   constructor(props) {
     super(props);
 
     const data = [];
     const locations = [...this.props.locations];
-    const object = this.props.obj;
-
-    locations.map( element => data.push({ name: element, case: object[element] }));
+    const records = this.props.obj;
+    locations.map( loc => data.push({ name: loc, case: records[loc] }));
     this.state = { data }
   }
 

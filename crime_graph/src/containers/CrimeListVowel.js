@@ -1,5 +1,5 @@
 import React from "react";
-import CrimeButton from "../containers/CrimeButton.js";
+import CrimeButton from "./CrimeButton.js";
 import '../css/styles.css';
 import Accordion from '@mui/material/Accordion';
 import { AccordionDetails, AccordionSummary } from "@mui/material";

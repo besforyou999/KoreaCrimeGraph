@@ -6,6 +6,7 @@ export const csvDataSlice = createSlice({
   initialState: {
     locations: [],
     csvData: [],
+    crimeData: {},
     mainPageType: 1,
   },
   reducers: {
@@ -14,6 +15,10 @@ export const csvDataSlice = createSlice({
     },
     setCsvData: (state, action) => {
       state.csvData = action.payload;
+      
+      for (const ele of action.payload.data) 
+        state.crimeData[ele['범죄분류']] = Object.assign({}, ele);
+      
     },
     setMainPageType: (state, action) => {
       state.mainPageType = action.payload;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 import '../css/styles.css';
-import Button from '../presentational/Button.js'
+import Button from '../presentational/Button.js';
 
 export default function CrimeButton(props) {
   const object = props.obj;

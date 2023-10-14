@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Route} from 'react-router-dom';
-import CrimeSpec from './presentational/CrimeSpec';
+import CrimeSpec from './containers/CrimeSpec';
 import App from './containers/App';
 import ScrollToTop from './containers/ScrollToTop';
 

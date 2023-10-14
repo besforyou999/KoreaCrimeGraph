@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import MainPage from "../components/MainPage.js";
+import MainPage from "../containers/MainPage.js";
 import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 

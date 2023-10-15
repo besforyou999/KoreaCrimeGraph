@@ -11,8 +11,10 @@ function CrimeChartCases(props) {
     x_data.push(ele.number)
   }
 
+  const margin = {top: 0, right: 10, left: 10, bottom: 5};
+
   return (
-    <Chart y_data={y_data} x_data={x_data}/>
+    <Chart y_data={y_data} x_data={x_data} margin={margin}/>
   );
 }
 

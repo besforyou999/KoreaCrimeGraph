@@ -20,6 +20,7 @@ function classifyByVowel(data) {
     vowel_class.push(data[i]);
     prevChar = curChar;
   }
+  
   classification.push(vowel_class);
   return classification;
 }
@@ -37,11 +38,10 @@ function getConstantVowel(kor) {
 
 function SortByKor() {
   
-  const data2 = useSelector(state => state.csvData.csvData).data;
-  const data = [...data2];
-  const crimeCaseKey = '범죄분류';
-  data.sort(function(a,b) {
-    return a[crimeCaseKey].charCodeAt(0) - b[crimeCaseKey].charCodeAt(0);
+  const data = [...useSelector(state => state.csvData.csvData).data];
+  const key = '범죄분류';
+  data.sort((a, b) => {
+    return a[key].charCodeAt(0) - b[key].charCodeAt(0);
   });
 
   let classification = classifyByVowel(data);

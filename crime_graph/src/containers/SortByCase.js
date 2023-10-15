@@ -1,6 +1,6 @@
 import React from 'react'; 
 import {useSelector} from 'react-redux';
-import CrimeChartCases from '../presentational/CrimeChartCases';
+import CrimeChartCases from './CrimeChartCases';
 import '../css/styles.css';
 
 function calc_case_sum(obj, location) {

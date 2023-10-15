@@ -6,10 +6,14 @@ import Button from '../presentational/Button.js'
 import '../css/styles.css';
 
 export default function CrimeSpec() {
-  const location = useLocation();
-  const records = location.state.object;
+
+  const records = useLocation().state.object;
   const locations = useSelector(state => state.csvData.locations);
   const crime_class = records['범죄분류'];
+
+  const x_data = []
+  for (const location of locations) 
+    x_data.push(records[location])
   
   return (
     <div className='chartPage'>
@@ -22,7 +26,7 @@ export default function CrimeSpec() {
         <h3>{crime_class}</h3>
       </div>
       <div className='chartContainer'>
-        <Chart y_data={locations} x_data={records}/>
+        <Chart y_data={locations} x_data={x_data}/>
       </div>
     </div>
   );

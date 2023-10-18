@@ -8,6 +8,7 @@ export const csvDataSlice = createSlice({
     csvData: [],
     crimeData: {},
     mainPageType: 1,
+    dataRead: false
   },
   reducers: {
     setLocations: (state, action) => {
@@ -22,10 +23,13 @@ export const csvDataSlice = createSlice({
     },
     setMainPageType: (state, action) => {
       state.mainPageType = action.payload;
+    },
+    setDataRead: (state, action) => {
+      state.dataRead = action.payload
     }
   }
 })
 
-export const {setLocations, setCsvData, setMainPageType} = csvDataSlice.actions;
+export const {setLocations, setCsvData, setMainPageType, setDataRead} = csvDataSlice.actions;
 
 export default csvDataSlice.reducer;

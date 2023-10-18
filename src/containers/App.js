@@ -4,13 +4,13 @@ import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
 import { useDispatch } from 'react-redux';
-import { setCsvData , setLocations } from '../features/csvData/csvDataSlice.js';
+import { useSelector } from 'react-redux';
+import { setCsvData , setLocations, setDataRead } from '../features/csvData/csvDataSlice.js';
 
 
 function App () { 
 
-  const [isLoading, setLoading] = useState(true);
-  const [dataFetched, setDataFetched] = useState(false);
+  const dataRead = useSelector(state => state.csvData.dataRead);
   const dispatch = useDispatch();
 
   const fetch_success = async result => {
@@ -23,8 +23,7 @@ function App () {
     locations.splice(7, 1); // 중간에 '범죄분류' 키 삭제
     dispatch(setLocations(locations))
 
-    setLoading(false);
-    setDataFetched(true);
+    dispatch(setDataRead(true));
   }
 
   const fetch_fail = () => {
@@ -33,12 +32,15 @@ function App () {
       header: true,
       dynamicTyping: true,
       complete: results => {
+        // 지역 데이터 store에 전송
         const keys = Object.keys(results.data[0]);
         keys.splice(0,1); // 키값 중 '범죄분류' 제거
         dispatch(setLocations(keys));
+        
+        // 전체 데이터 store에 전송
         dispatch(setCsvData(results));
-        setLoading(false);
-        setDataFetched(true);
+
+        dispatch(setDataRead(true));
       },
       error: () => console.log("csv 파일 파싱 에러"),
     });
@@ -49,20 +51,17 @@ function App () {
     const url = `https://api.odcloud.kr/api/15085727/v1/uddi:d57791f7-1e1e-46c9-bbfd-911fa64ee8a4?page=1&perPage=200&serviceKey=${api_key}&dataType=JSON`;
     const result = await fetch(url);
 
-    if (result.status === 200) {
-      console.log("success");
-      fetch_success(result);
-    } else {
-      console.log("fail")
-      fetch_fail(result);
-    }
+    if (result.status === 200)
+      fetch_success(result)
+    else
+      fetch_fail(result)
   }
 
-  if (isLoading && !dataFetched) fetch_data();
+  if (!dataRead) fetch_data();
 
   return (
     <div className="container">
-      {isLoading ? 
+      {!dataRead ? 
         ( 
           <div className="loading">
             <span>Loading...</span>

@@ -1,10 +1,9 @@
-import React, {useState } from "react";
+import React from "react";
 import MainPage from "../containers/MainPage.js";
 import csvFile from '../resource/crime_loc.csv';
 import Papa from 'papaparse';
 
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCsvData , setLocations, setDataRead } from '../features/csvData/csvDataSlice.js';
 
 
@@ -13,6 +12,7 @@ function App () {
   const dataRead = useSelector(state => state.csvData.dataRead);
   const dispatch = useDispatch();
 
+  // 성공 시 store에 데이터 전송
   const fetch_success = async result => {
     const json = await result.json();
     // 전체 데이터 store에 전송
@@ -26,6 +26,7 @@ function App () {
     dispatch(setDataRead(true));
   }
 
+  // 실패 시 csv 파일에 저장된 데이터 파싱해 store에 전송
   const fetch_fail = () => {
     Papa.parse(csvFile, {
       download: true,

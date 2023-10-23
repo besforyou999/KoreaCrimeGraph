@@ -8,4 +8,4 @@ function Button ({text, click}) {
   )
 }
 
-export default React.memo(Button);
+export default Button;

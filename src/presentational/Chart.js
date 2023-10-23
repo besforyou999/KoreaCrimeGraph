@@ -1,7 +1,7 @@
 import React from 'react';
 import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, ResponsiveContainer } from 'recharts';
 
-export default function Chart({y_data, x_data, margin}) {
+function Chart({y_data, x_data, margin}) {
 
   const data = [];
   for (let i = 0 ; i < y_data.length ; i++) 
@@ -14,12 +14,13 @@ export default function Chart({y_data, x_data, margin}) {
           layout="vertical">
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis type="number"/>
-          <YAxis dataKey="name" type="category"/>
+          <YAxis dataKey="name" width={50} type="category"/>
           <Tooltip />
           <Legend />
           <Bar dataKey="case" fill="#82ca9d"/>
         </BarChart>
       </ResponsiveContainer>
   );
-  
 }
+
+export default React.memo(Chart);

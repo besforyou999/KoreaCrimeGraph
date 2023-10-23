@@ -23,6 +23,7 @@ function App () {
     locations.splice(7, 1); // 중간에 '범죄분류' 키 삭제
     dispatch(setLocations(locations))
 
+    // 데이터 읽기 완료 시 -> dataRead 상태 true로 변경
     dispatch(setDataRead(true));
   }
 
@@ -41,6 +42,7 @@ function App () {
         // 전체 데이터 store에 전송
         dispatch(setCsvData(results));
 
+        // 데이터 읽기 완료 시 -> dataRead 상태 true로 변경
         dispatch(setDataRead(true));
       },
       error: () => console.log("csv 파일 파싱 에러"),
@@ -50,10 +52,11 @@ function App () {
   const fetch_data = async () => {
     const api_key = process.env.REACT_APP_APIKEY;
     const url = `https://api.odcloud.kr/api/15085727/v1/uddi:d57791f7-1e1e-46c9-bbfd-911fa64ee8a4?page=1&perPage=200&serviceKey=${api_key}&dataType=JSON`;
+    
     try {
       const result = await fetch(url)
       fetch_success(result)
-    } catch(err) {
+    } catch (err) {
       console.log(err)
       console.log("데이터 불러오기 실패. csv 데이터 파일 파싱 실행")
       fetch_fail()
@@ -80,4 +83,4 @@ function App () {
   );
 }
 
-export default App;
+export default React.memo(App);

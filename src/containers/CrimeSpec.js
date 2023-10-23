@@ -5,7 +5,7 @@ import Chart from '../presentational/Chart.js';
 import Button from '../presentational/Button.js'
 import '../css/styles.css';
 
-export default function CrimeSpec() {
+function CrimeSpec() {
 
   const records = useLocation().state.object;
   const locations = useSelector(state => state.csvData.locations);
@@ -31,3 +31,5 @@ export default function CrimeSpec() {
     </div>
   );
 }
+
+export default React.memo(CrimeSpec);

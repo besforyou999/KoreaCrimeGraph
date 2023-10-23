@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import '../css/styles.css';
 import Button from '../presentational/Button.js';
 
-export default function CrimeButton(props) {
+function CrimeButton(props) {
   const object = props.obj;
   const history = useHistory();
   const crime_type = object['범죄분류']
@@ -21,3 +21,5 @@ export default function CrimeButton(props) {
     </div>
   ); 
 }
+
+export default React.memo(CrimeButton);

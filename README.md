@@ -24,7 +24,7 @@
 
 * *Language* : HTML, CSS, JavaScript
 * *Library*  : React, Redux, recharts, MUI React components
-* *Deploy*   : Github-pages
+* *Deploy*   : Github-pages, Github-actions
 * *Tool*     : Git
 
 #### 사용해보세요

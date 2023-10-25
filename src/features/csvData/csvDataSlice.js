@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
 export const csvDataSlice = createSlice({
   name: 'csvData',
   initialState: {

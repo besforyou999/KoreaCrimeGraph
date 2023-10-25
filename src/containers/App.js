@@ -65,7 +65,8 @@ function App () {
     }
   }
 
-  if (!dataRead) fetch_data();
+  if (!dataRead)
+    fetch_data();
 
   return (
     <div className="container">

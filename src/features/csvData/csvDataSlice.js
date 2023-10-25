@@ -6,6 +6,7 @@ export const csvDataSlice = createSlice({
     locations: [],
     csvData: [],
     crimeData: {},
+    crime_count: {},
     mainPageType: 1,
     dataRead: false
   },
@@ -16,8 +17,21 @@ export const csvDataSlice = createSlice({
     setCsvData: (state, action) => {
       state.csvData = action.payload;
       
-      for (const ele of action.payload.data) 
+      for (const ele of action.payload.data) {
         state.crimeData[ele['범죄분류']] = Object.assign({}, ele);
+
+        let crime = '';
+        let count = 0;
+
+        for (const key in ele) {
+          if (key === '범죄분류') 
+            crime = ele[key]
+          else 
+            count += ele[key]
+        }
+
+        state.crime_count[crime] = count
+      }
       
     },
     setMainPageType: (state, action) => {

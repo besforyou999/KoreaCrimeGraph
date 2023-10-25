@@ -1,22 +1,13 @@
 import React from 'react';
 import BoardItem from './BoardItem.js';
 
-function Board() {
+function Board({data}) {
   
   return (
     <div className='board'>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
-      <BoardItem name="강도" number="100" ></BoardItem>
+      {data.map(element => (
+        <BoardItem name={element[0]} number={element[1]}/>
+      ))}
     </div>
   )
 }

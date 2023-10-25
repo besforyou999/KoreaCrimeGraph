@@ -8,7 +8,7 @@ function Input() {
   const input = useSelector(state => state.input.input);
   const dispatch = useDispatch();
 
-  const changeHandler = (e) => {
+  const changeHandler = e => {
     dispatch(setInput(e.target.value))
   }
 

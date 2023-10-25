@@ -34,8 +34,10 @@ function App () {
       header: true,
       dynamicTyping: true,
       complete: results => {
+
         // 지역 데이터 store에 전송
         const keys = Object.keys(results.data[0]);
+        console.log(keys);
         keys.splice(0,1); // 키값 중 '범죄분류' 제거
         dispatch(setLocations(keys));
         
@@ -52,12 +54,12 @@ function App () {
   const fetch_data = async () => {
     const api_key = process.env.REACT_APP_APIKEY;
     const url = `https://api.odcloud.kr/api/15085727/v1/uddi:d57791f7-1e1e-46c9-bbfd-911fa64ee8a4?page=1&perPage=200&serviceKey=${api_key}&dataType=JSON`;
-    
+
     try {
       const result = await fetch(url)
       fetch_success(result)
     } catch (err) {
-      console.log(err)
+      console.log(err);
       console.log("데이터 불러오기 실패. csv 데이터 파일 파싱 실행")
       fetch_fail()
     }

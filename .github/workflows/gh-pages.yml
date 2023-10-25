@@ -8,8 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     env:
       REACT_APP_APIKEY: ${{ secrets.REACT_APP_APIKEY }}
+      
     steps:
       - uses: actions/checkout@v2
 

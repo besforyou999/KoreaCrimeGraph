@@ -8,7 +8,7 @@ function BoardItem({name, number}) {
         {name}
       </div>
       <div>
-        {number}
+        {number} 건
       </div>
     </div>
   )

@@ -71,3 +71,35 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.noResult {
+  height: 40vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container p {
+  margin: 1px;
+}
+
+.material-symbols-outlined {
+  font-size: 64px;
+  color: gray;
+  margin-bottom: 20;
+}

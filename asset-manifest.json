@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/korea_crime_graph/static/css/main.d87976dc.css",
-    "main.js": "/korea_crime_graph/static/js/main.f69a37c7.js",
+    "main.css": "/korea_crime_graph/static/css/main.d5446142.css",
+    "main.js": "/korea_crime_graph/static/js/main.c1baa165.js",
     "static/media/crime_loc_2019.csv": "/korea_crime_graph/static/media/crime_loc_2019.47dbb8c19703f85d513a.csv",
     "index.html": "/korea_crime_graph/index.html",
-    "main.d87976dc.css.map": "/korea_crime_graph/static/css/main.d87976dc.css.map",
-    "main.f69a37c7.js.map": "/korea_crime_graph/static/js/main.f69a37c7.js.map"
+    "main.d5446142.css.map": "/korea_crime_graph/static/css/main.d5446142.css.map",
+    "main.c1baa165.js.map": "/korea_crime_graph/static/js/main.c1baa165.js.map"
   },
   "entrypoints": [
-    "static/css/main.d87976dc.css",
-    "static/js/main.f69a37c7.js"
+    "static/css/main.d5446142.css",
+    "static/js/main.c1baa165.js"
   ]
 }

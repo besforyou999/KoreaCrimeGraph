@@ -2,7 +2,6 @@ import React from 'react';
 
 
 function NoResult() {
-
   return (
     <div className='noResult'>
       <div className='inner-container'>
@@ -16,8 +15,6 @@ function NoResult() {
       </div>
     </div>
   )
-
-
 }
 
 export default NoResult;

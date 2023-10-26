@@ -103,3 +103,26 @@
   color: gray;
   margin-bottom: 20;
 }
+
+
+#scroll-to-top {
+  width: 42px;
+  height: 42px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 0px;
+  z-index: 9;
+}
+
+#arrow_upward {
+  font-size: 36px;
+  color:white;
+}

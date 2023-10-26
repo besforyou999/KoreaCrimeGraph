@@ -2,6 +2,8 @@ import React from 'react';
 import SortCrimeDataBy from '../presentational/SortCrimeDataBy.js';
 import MainPageTitle from '../presentational/MainPageTitle.js';
 import Button from '../presentational/Button.js';
+import ScrollTop from '../presentational/ScrollTop.js';
+
 import '../css/styles.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setMainPageType } from '../features/csvData/csvDataSlice.js';
@@ -9,7 +11,6 @@ import { setMainPageType } from '../features/csvData/csvDataSlice.js';
 function MainPage() {
 
   const mainPageType = useSelector(state => state.csvData.mainPageType);
-
   const dispatch = useDispatch();
 
   return ( 
@@ -21,6 +22,7 @@ function MainPage() {
         <Button text="검색" click={() => dispatch(setMainPageType(3))}/>
       </div>
       <SortCrimeDataBy type={mainPageType}/>
+      <ScrollTop/>
     </div>
   );
   

@@ -11,13 +11,13 @@ function CrimeButton(props) {
   function handleClick() {
     history.push({
       pathname: '/CrimeSpec',
-      state: { object }
+      '범죄분류': crime_type,
     })
   }
 
   return (
     <div>
-        <Button text={crime_type} click={()=> handleClick()}/>
+        <Button text={crime_type} click={handleClick}/>
     </div>
   ); 
 }

@@ -7,13 +7,13 @@ import '../css/styles.css';
 
 function CrimeSpec() {
 
-  const records = useLocation().state.object;
+  const crime_class = useLocation()['범죄분류']
   const locations = useSelector(state => state.csvData.locations);
-  const crime_class = records['범죄분류'];
+  const crime_data = useSelector(state => state.csvData.crimeData[crime_class]);
 
   const x_data = []
   for (const location of locations) 
-    x_data.push(records[location])
+    x_data.push(crime_data[location])
   
   return (
     <div className='chartPage'>

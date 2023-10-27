@@ -12,9 +12,7 @@ export default function ScrollTop() {
     });
   })
 
-  const clickHandler = () => {
-    window.scrollTo({top: 0, behavior: "smooth"});
-  }
+  const clickHandler = () => { window.scrollTo({top: 0, behavior: "smooth"}) }
 
   return (
     <div id="scroll-to-top">

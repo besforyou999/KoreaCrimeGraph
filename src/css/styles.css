@@ -1,3 +1,4 @@
+/* 차트 */
 .chartContainer {
   width: device-width;
   height: 100%;
@@ -13,11 +14,18 @@
   height: 11000px;
 }
 
+/* 범죄 목록 */ 
 .btn {
   font-size: 1.2rem;
   min-width: 90px;
   padding: 15px 10px;
   margin: 5px;
+
+  transition: 0.1s;
+}
+
+.btn:hover {
+  transform: scale(1.05)
 }
 
 .vowelDiv {
@@ -60,17 +68,24 @@
 }
 
 .boardItem {
+  font-size: 24px;
   height: 64px;
   margin: 15px;
   padding: 0px 10px;
   background-color: lightblue;
-  
-  font-size: 24px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  transition: 0.1;
 }
+
+.boardItem:hover {
+  transform: scale(1.05);
+  border: 1px solid blue;
+}
+
 
 .noResult {
   height: 40vh;
@@ -120,6 +135,12 @@
   bottom: 30px;
   right: 0px;
   z-index: 9;
+
+  transition: 0.1s;
+}
+
+#scroll-to-top:hover {
+  transform: scale(1.2);
 }
 
 #arrow_upward {

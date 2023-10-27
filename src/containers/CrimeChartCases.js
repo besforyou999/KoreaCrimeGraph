@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import Chart from '../presentational/Chart.js';
 import { useHistory } from 'react-router-dom';
 
@@ -14,12 +14,12 @@ function CrimeChartCases(props) {
 
   const history = useHistory();
 
-  const barClickHandler = (e) => {
+  const barClickHandler = useCallback((e) => {
     history.push({
       pathname: '/CrimeSpec',
       '범죄분류': e.name,
     })
-  }
+  },[history])
 
   const margin = {top: 0, right: 10, left: 100, bottom: 5};
 

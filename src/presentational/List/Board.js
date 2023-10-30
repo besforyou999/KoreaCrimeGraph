@@ -10,7 +10,7 @@ function Board({data}) {
 
   const clickHandler = (e) => {
     if (e.target.className === 'boardItem') {
-      const crime_type = e.target.childNodes[0].textContent;
+      const crime_type = e.target.firstChild.textContent.trim();
       history.push({
         pathname: '/CrimeSpec',
         '범죄분류': crime_type

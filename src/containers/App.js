@@ -53,8 +53,6 @@ function App () {
 
   useEffect(() => {
     async function fetch_data() {
-      console.log("fetch_data")
-      console.log("dataRead : ", dataRead)
       const api_key = process.env.REACT_APP_APIKEY;
       const url = `https://api.odcloud.kr/api/15085727/v1/uddi:d57791f7-1e1e-46c9-bbfd-911fa64ee8a4?page=1&perPage=200&serviceKey=${api_key}&dataType=JSON`;
       try {

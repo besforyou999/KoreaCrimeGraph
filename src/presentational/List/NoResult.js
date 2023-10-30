@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function NoResult() {
   return (
     <div className='noResult'>
@@ -17,4 +16,4 @@ function NoResult() {
   )
 }
 
-export default NoResult;
+export default React.memo(NoResult);

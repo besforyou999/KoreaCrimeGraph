@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../presentational/List/Input.js';
+import Input from './Input.js';
 import Board from '../presentational/List/Board.js';
 
 import { useSelector} from 'react-redux';

@@ -12,7 +12,7 @@ function MainPage() {
 
   const mainPageType = useSelector(state => state.csvData.mainPageType);
   const dispatch = useDispatch();
-
+  
   return ( 
     <div>
       <MainPageTitle/>
@@ -20,6 +20,7 @@ function MainPage() {
         <Button text="가나다순" click={() => dispatch(setMainPageType(1))}/>
         <Button text="범죄건순" click={() => dispatch(setMainPageType(2))}/>
         <Button text="검색" click={() => dispatch(setMainPageType(3))}/>
+        <Button text="Made by" click={() => dispatch(setMainPageType(4))}/>
       </div>
       <SortCrimeDataBy type={mainPageType}/>
       <ScrollTop/>

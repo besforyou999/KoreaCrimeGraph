@@ -72,6 +72,7 @@
   height: 64px;
   margin: 15px;
   padding: 0px 10px;
+  border-radius: 5px;
   background-color: lightblue;
 
   display: flex;
@@ -145,4 +146,26 @@
 #arrow_upward {
   font-size: 36px;
   color:white;
+}
+
+
+/* Made by */
+
+.icons {
+  margin: 10px
+}
+
+.gmailImg, .githubImg, .tstoryImg {
+  width: 50px;
+  height: 50px;
+}
+
+.githubImg {
+  width: 55px;
+  height: 55px;
+}
+
+.tstoryImg {
+  width: 50px;
+  height: 50px;
 }
